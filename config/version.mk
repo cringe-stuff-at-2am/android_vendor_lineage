@@ -20,7 +20,11 @@ endif
 # Filter out random types, so it'll reset to UNOFFICIAL
 ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(LINEAGE_BUILDTYPE)),)
     LINEAGE_BUILDTYPE := UNOFFICIAL
-    LINEAGE_EXTRAVERSION :=
+    ifeq ($(WITH_GMS),true)
+        LINEAGE_EXTRAVERSION := -GMS
+    else
+        LINEAGE_EXTRAVERSION :=
+    endif
 endif
 
 ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
