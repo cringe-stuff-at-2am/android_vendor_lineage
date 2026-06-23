@@ -61,6 +61,10 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     is_expressive_design_enabled=true
 
+# Enable background blur for widget picker
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.launcher.depth.widget=true
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
