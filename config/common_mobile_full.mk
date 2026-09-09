@@ -3,7 +3,8 @@ $(call inherit-product, vendor/lineage/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 
-# Include GoogleSansFlex font
+# Include GoogleSans and GoogleSansFlex font
+$(call inherit-product-if-exists, external/google-fonts/google-sans/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/google-sans-flex/fonts.mk)
 
 # Apps
